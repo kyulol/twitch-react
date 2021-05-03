@@ -1,5 +1,5 @@
 .navbar{
-  @apply bg-twitch h-16 text-white font-bold flex items-center relative;
+  @apply bg-twitch h-16 text-white font-bold flex items-center fixed w-full z-50;
 }
 .nav-ul{
   @apply h-full flex items-center justify-center space-x-4 px-6;
