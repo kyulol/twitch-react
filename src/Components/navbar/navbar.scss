@@ -1,0 +1,28 @@
+.navbar{
+  @apply bg-twitch h-16 text-white font-bold flex items-center relative;
+}
+.nav-ul{
+  @apply h-full flex items-center justify-center space-x-4 px-6;
+}
+
+// search-base
+.div-search{
+  @apply bg-white rounded-md h-8;
+  position: absolute;
+  top: 50%; right: 50%;
+  transform: translate(50%,-50%);
+
+  // search <form>
+  .form-search{
+    @apply text-almostBlack flex items-center;
+
+    // search <input>
+    .input-search{
+      @apply outline-none pl-2;
+    }
+    // search <img>
+    .btn-submit .search-icon{
+      @apply w-8 ;
+    }
+  }
+}
