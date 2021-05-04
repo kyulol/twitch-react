@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import twitchLogoWhite from '../../assets/images/logos/twitchWhite.svg';
 import search from '../../assets/images/icons/search.svg';
 import openMenu from '../../assets/images/icons/menuMbl/openMenu.svg';
@@ -22,15 +23,22 @@ export default function Navbar() {
         <ul className="nav-ul">
 
           <li className="nav-li">
-            <img className="logo-twitch w-8" src={twitchLogoWhite} alt="twitch Logo"/>
+            <Link to="/">
+              <img className="logo-twitch w-8" src={twitchLogoWhite} alt="twitch Logo"/>
+            </Link>
+            
           </li>
 
           <li className="nav-li">
-            Top Jeux
+            <NavLink exact activeClassName="active" to="/">
+              Top Jeux
+            </NavLink>
           </li>
 
           <li className="nav-li">
-            Top Streamers
+            <NavLink exact activeClassName="active" to="/top-streams">
+              Top Streamers
+            </NavLink>
           </li>
         </ul>
 
