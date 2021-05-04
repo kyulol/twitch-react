@@ -3,6 +3,14 @@
 }
 .nav-ul{
   @apply h-full flex items-center justify-center space-x-4 px-6;
+
+}
+
+.nav-li a{
+    @apply border-b-2 border-dotted border-opacity-0 border-white;
+    &.active{
+      @apply border-opacity-100;
+    }
 }
 
 // search-base
