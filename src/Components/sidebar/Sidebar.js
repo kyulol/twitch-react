@@ -84,6 +84,7 @@ export default function Sidebar() {
     fetchData();
 
   }, [])
+  // console.log("hello");
 
   return (
     <div className="sidebar">

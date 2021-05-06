@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import api from '../../api';
 import playBtn from '../../assets/images/icons/playTwitch.svg';
 
+// SHOW PAGE LIST OF TOP GAMES STREAMED
+
 export default function Games() {
 
   const [games, setGames] = useState([]);

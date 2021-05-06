@@ -20,7 +20,7 @@ function App() {
               <div className="flex pt-16 pl-60 ">
                 <Route exact path="/" component={Games} />
                 <Route exact path="/top-streams" component={TopStreams} />
-                <Route exact path="/live" component={Live} />
+                <Route exact path="/live/:slug" component={Live} />
               </div>
             </>
           </Switch>
