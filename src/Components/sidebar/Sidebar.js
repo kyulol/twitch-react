@@ -85,8 +85,6 @@ export default function Sidebar() {
 
   }, [])
 
-  // console.log(topStreamers);
-
   return (
     <div className="sidebar">
       <h3 className="text-center py-4">Chaines recommandées</h3>

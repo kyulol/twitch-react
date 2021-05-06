@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {Link} from 'react-router-dom';
 import api from '../../api';
 import playBtn from '../../assets/images/icons/playTwitch.svg';
 
@@ -14,7 +15,6 @@ export default function TopStreams() {
       const result = await api.get('https://api.twitch.tv/helix/streams');
 
       let dataArray = result.data.data;
-      console.log(dataArray);
       
       let gamesIDs = dataArray.map(streamer => {
         return streamer.game_id;
@@ -84,23 +84,31 @@ export default function TopStreams() {
   return (
     <div className="">
       <h1 className="text-5xl font-medium my-8">Streams les plus populaires</h1>
-      <div className="flex flex-wrap justify-center items-center font-medium text-white">
-        {channels.map((channel, index) =>(
 
+      {/* container cards top streamers */}
+      <div className="flex flex-wrap justify-center items-center font-medium text-white">
+
+        {/* start loop card top streamers */}
+        {channels.map((channel, index) =>( 
+
+        <Link to={{ pathname: `/live/${channel.login}` }}>
           <div key={index} className="cardStream w-72 overflow-hidden rounded-lg m-6 shadow bg-twitch transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-none hover:ring ring-twitch ring-offset-4">
+            {/* image top streamer (image taken from his live) */}
             <img src={channel.thumbnail_url} className="w-full object-contain" alt=""/>
             <div className="p-3">
 
-              <p>{channel.gameName}</p>
-              <p>{channel.viewers_count}</p>
+              <p>{channel.gameName}</p> {/* <== name of the game he is playing*/}
+              <p>{channel.viewers_count}</p> {/* <== nummber of viewers actually watching*/}
 
-              <div className="cardStreamBtn flex items-center justify-center whitespace-nowrapw-full py-2">
-                <img className="w-6 mr-3" src={playBtn} alt="play video"/>
-                <span className="overflow-ellipsis overflow-hidden">{channel.user_name}</span>
-              </div>
+              {/* button to watch streamer*/}
+                <div className="cardStreamBtn flex items-center justify-center whitespace-nowrapw-full py-2">
+                  <img className="w-6 mr-3" src={playBtn} alt="play video"/> {/* <== button image PLAY*/}
+                  <span className="overflow-ellipsis overflow-hidden">{channel.user_name}</span> {/* <== streamer pseudo*/}
+                </div>
             </div>
 
           </div>
+        </Link>
 
 
         ))}
