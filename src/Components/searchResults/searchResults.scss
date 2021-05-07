@@ -1,0 +1,9 @@
+.card-search{
+  @apply w-96 flex items-center justify-center flex-col m-4 shadow rounded-lg overflow-hidden cursor-pointer bg-twitch 
+  transform duration-300 ease-in-out 
+  hover:-translate-y-2 hover:shadow-none hover:ring ring-twitch ring-offset-4;
+
+  .card-search-btn{
+    @apply flex items-center justify-center whitespace-nowrap font-medium text-white w-full p-3;
+  }
+}

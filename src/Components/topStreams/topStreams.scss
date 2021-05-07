@@ -1,0 +1,11 @@
+.cardTopStream{
+  @apply relative w-72 overflow-hidden rounded-lg m-6 shadow bg-twitch transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-none hover:ring ring-twitch ring-offset-4;
+
+  &:hover p.cardGameName{
+    @apply block bg-opacity-50 transform duration-300 ease-in-out;
+  }
+  .cardGameName{
+    @apply hidden absolute top-0 left-0 text-left pl-3 py-1 bg-twitch w-full bg-opacity-0 transform duration-300 ease-in-out;
+  }
+
+}

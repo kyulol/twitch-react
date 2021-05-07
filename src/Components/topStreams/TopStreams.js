@@ -93,16 +93,17 @@ export default function TopStreams() {
         {channels.map((channel, index) =>( 
 
         <Link key={index} to={{ pathname: `/live/${channel.login}` }}>
-          <div className="cardStream w-72 overflow-hidden rounded-lg m-6 shadow bg-twitch transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-none hover:ring ring-twitch ring-offset-4">
+          <div className="cardTopStream">
             {/* image top streamer (image taken from his live) */}
             <img src={channel.thumbnail_url} className="w-full object-contain" alt=""/>
+            <p className="cardGameName ">{channel.gameName}</p> {/* <== name of the game he is playing*/}
             <div className="p-3">
 
-              <p>{channel.gameName}</p> {/* <== name of the game he is playing*/}
+              
               <p>{channel.viewers_count}</p> {/* <== nummber of viewers actually watching*/}
 
               {/* button to watch streamer*/}
-                <div className="cardStreamBtn flex items-center justify-center whitespace-nowrapw-full py-2">
+                <div className="cardStreamBtn flex items-center justify-center whitespace-nowrapw-full">
                   <img className="w-6 mr-3" src={playBtn} alt="play video"/> {/* <== button image PLAY*/}
                   <span className="overflow-ellipsis overflow-hidden">{channel.user_name}</span> {/* <== streamer pseudo*/}
                 </div>

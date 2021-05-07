@@ -9,6 +9,16 @@ import openMenu from '../../assets/images/icons/menuMbl/openMenu.svg';
 
 export default function Navbar() {
 
+  const [searchInput, setSearchInput] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  }
+
+  const handleKeyPress = (e) => {
+    setSearchInput(e.target.value);
+  }
+
   const [outLineInput, setoutLineInput] = useState(false);
   const changeState = () => {
     setoutLineInput(!outLineInput);
@@ -43,11 +53,13 @@ export default function Navbar() {
         </ul>
 
         <div className={`div-search ${outLineInput ? 'ring-2 ring-black rounded-md' : null}`}>
-          <form className="form-search">
-            <input onClick={changeState} type="text" className="input-search"/>
-            <button type="submit" className="btn-submit ">
-              <img className="search-icon" src={search} alt="search Icon" srcSet=""/>
-            </button>
+          <form className="form-search" onSubmit={handleSubmit}>
+            <input required value={searchInput} onChange={(e) => handleKeyPress(e)} onClick={changeState} type="text" className="input-search"/>
+            <Link to={{pathname: `search-results/${searchInput}`}}>
+              <button type="submit" className="btn-submit ">
+                <img className="search-icon" src={search} alt="search Icon" srcSet=""/>
+              </button>
+            </Link>
           </form>
         </div>
 
