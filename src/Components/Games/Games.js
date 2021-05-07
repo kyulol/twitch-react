@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 import api from '../../api';
 import playBtn from '../../assets/images/icons/playTwitch.svg';
 
@@ -36,16 +37,17 @@ export default function Games() {
 
       <div className="flex items-center justify-center flex-wrap">
         {games.map((game, index) =>(
+          <Link key={index} to={{pathname: "game-streamers/" + game.name, state: {gameID: game.id}}}>
+            <div className="cardGame">
+              <img src={game.box_art_url} alt="couverture du jeu " className="w-full"/>
 
-          <div key={index} className="cardGame">
-            <img src={game.box_art_url} alt="couverture du jeu " className="w-full"/>
+              <div className="cardGameBtn">
+                <img className="w-6 mr-3" src={playBtn} alt="play video"/>
+                <span className="overflow-ellipsis overflow-hidden">{game.name}</span>
+              </div>
 
-            <div className="cardGameBtn">
-              <img className="w-6 mr-3" src={playBtn} alt="play video"/>
-              <span className="overflow-ellipsis overflow-hidden">{game.name}</span>
             </div>
-
-          </div>
+          </Link>
 
         ))}
       </div>
