@@ -6,6 +6,7 @@ import Navbar from './Components/navbar/Navbar';
 import Sidebar from './Components/sidebar/Sidebar';
 import Games from './Components/games/Games';
 import TopStreams from './Components/topStreams/TopStreams';
+import Live from './Components/live/Live';
 
 function App() {
   return (
@@ -15,12 +16,13 @@ function App() {
         <Navbar />
         <Sidebar />
           <Switch>
-            <div className="flex pt-16 pl-60 ">
-              
-              <Route exact path="/" component={Games} />
-              <Route exact path="/top-streams" component={TopStreams} />
-
-            </div>
+            <>
+              <div className="flex pt-16 pl-60 ">
+                <Route exact path="/" component={Games} />
+                <Route exact path="/top-streams" component={TopStreams} />
+                <Route exact path="/live/:slug" component={Live} />
+              </div>
+            </>
           </Switch>
         
       </div>
