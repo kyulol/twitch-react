@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import api from '../../api';
 import {Link, useParams} from 'react-router-dom';
+import Errors from '../errors/Errors';
 import playBtn from '../../assets/images/icons/playTwitch.svg';
 
 export default function SearchResults() {
@@ -19,12 +20,19 @@ export default function SearchResults() {
   useEffect(() => {
     const fetchData = async () =>{
       const result = await api.get(`https://api.twitch.tv/helix/users?login=${cleanSearch}`);
-      setStreamerInfos(result.data.data)
+
+      if (result.data.data.length === 0) {
+        setSearchResults(false);
+      } else {
+        
+        setStreamerInfos(result.data.data)
+      }
     }
     fetchData();
   }, [])
 
   return (
+    searchResults ?
     <div className="w-full">
       <h1>Résultat de la recherche</h1>
       <div className="flex justify-center flex-wrap items-center">
@@ -44,5 +52,7 @@ export default function SearchResults() {
       </div>
       
     </div>
+    :
+    <Errors />
   )
 }

@@ -2,14 +2,20 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import twitchLogoWhite from '../../assets/images/logos/twitchWhite.svg';
 import search from '../../assets/images/icons/search.svg';
-import openMenu from '../../assets/images/icons/menuMbl/openMenu.svg';
-// import closeMenu from '../../assets/images/icons/closeMenu.svg';
+import openMenuWhite from '../../assets/images/icons/menuMbl/openMenuWhite.svg';
+import closeMenuWhite from '../../assets/images/icons/menuMbl/closeMenuWhite.svg';
 
 
 
 export default function Navbar() {
 
   const [searchInput, setSearchInput] = useState('');
+
+  // open close mobile menu
+  const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
+  const changeMenuState = () => {
+    setToggleMobileMenu(!toggleMobileMenu);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -67,9 +73,22 @@ export default function Navbar() {
       </nav>
 
       {/* menu responsive */}
-      <div className="menuMbl block top-8 right-8 w-12 h-12 lg:hidden">
-        <img src={openMenu} alt="icone ouvrir ou fermer menu responsive" className="menuIcon"/>
+      
+      <div className="navbarMbl hidden">
+        <Link to="/">
+          <img className="logoTwitchMbl w-8" src={twitchLogoWhite} alt="twitch Logo"/>
+        </Link>
+        <button onClick={changeMenuState} className="focus:outline-none">
+          <img className="hamburgerIcon relative z-40 w-8 h-8" src={toggleMobileMenu ? closeMenuWhite : openMenuWhite} alt="icone ouvrir ou fermer menu responsive"/>
+        </button>
       </div>
+
+      <div className={`menuMbl ${toggleMobileMenu ? 'menuMblOpen' : 'menuMblClose'}`}>
+        helo
+
+      </div>
+
+      
 
     </>
   )

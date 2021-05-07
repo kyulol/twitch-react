@@ -32,10 +32,10 @@ export default function Games() {
   }, [])
 
   return (
-    <div className="">
-      <h1 className="text-5xl font-bold my-8">Jeux les plus populaires</h1>
+    <div className="gamesList">
+      <h1 className="titleGamesList">Jeux les plus populaires</h1>
 
-      <div className="flex items-center justify-center flex-wrap">
+      <div className="containerGamesList">
         {games.map((game, index) =>(
           <Link key={index} to={{pathname: "game-streamers/" + game.name, state: {gameID: game.id}}}>
             <div className="cardGame">
@@ -43,7 +43,7 @@ export default function Games() {
 
               <div className="cardGameBtn">
                 <img className="w-6 mr-3" src={playBtn} alt="play video"/>
-                <span className="overflow-ellipsis overflow-hidden">{game.name}</span>
+                <span>{game.name}</span>
               </div>
 
             </div>

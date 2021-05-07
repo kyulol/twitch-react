@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {Link} from 'react-router-dom';
 import api from '../../api';
 import view from '../../assets/images/icons/view.svg';
 
@@ -93,29 +94,31 @@ export default function Sidebar() {
       <ul className="mx-auto divide-y-2 divide-twitch divide-solid">
         
         {topStreamers.map((stream, index) =>(
-          <li className="py-2 text-sm text-left" key={index}>
+          <Link key={index}>
+            <li className="py-2 text-sm text-left">
 
-            <div className="flex items-center w-full">
+              <div className="flex items-center w-full">
 
-              <div className="relative mr-3">
-                <img className="w-10 rounded-full overflow-ellipsis overflow-hidden" src={stream.avatar} alt={`stream.login 'avatar'`}/>
-              </div>
-
-              <div className="w-full">
-                <div className="flex items-center justify-between">
-                  <span className="overflow-ellipsis overflow-hidden">{stream.user_name}</span>
-                  <span className="flex justify-end font-light text-xs">
-                      <img src={view} className="w-4 mr-2 animate-pulse" alt=""/>
-                      {numFormatter(stream.viewer_count)}
-                  </span>  
+                <div className="relative mr-3">
+                  <img className="w-10 rounded-full overflow-ellipsis overflow-hidden" src={stream.avatar} alt={`stream.login 'avatar'`}/>
                 </div>
-                
-                <p className="text-left w-full overflow-ellipsis overflow-hidden">{stream.gameName}</p>
-              </div>
 
-            </div>
-              
-          </li>
+                <div className="w-full">
+                  <div className="flex items-center justify-between">
+                    <span className="overflow-ellipsis overflow-hidden">{stream.user_name}</span>
+                    <span className="flex justify-end font-light text-xs">
+                        <img src={view} className="w-4 mr-2 animate-pulse" alt=""/>
+                        {numFormatter(stream.viewer_count)}
+                    </span>  
+                  </div>
+                  
+                  <p className="text-left w-full overflow-ellipsis overflow-hidden">{stream.gameName}</p>
+                </div>
+
+              </div>
+                
+            </li>
+          </Link>
         ))}
 
       </ul>

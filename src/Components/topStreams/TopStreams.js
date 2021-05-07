@@ -83,11 +83,11 @@ export default function TopStreams() {
   }, [])
 
   return (
-    <div className="">
-      <h1 className="text-5xl font-medium my-8">Streams les plus populaires</h1>
+    <div className="topStreamers">
+      <h1 className="titleTopStreamers">Streams les plus populaires</h1>
 
       {/* container cards top streamers */}
-      <div className="flex flex-wrap justify-center items-center font-medium text-white">
+      <div className="containerTopStreamers">
 
         {/* start loop card top streamers */}
         {channels.map((channel, index) =>( 
@@ -95,17 +95,16 @@ export default function TopStreams() {
         <Link key={index} to={{ pathname: `/live/${channel.login}` }}>
           <div className="cardTopStream">
             {/* image top streamer (image taken from his live) */}
-            <img src={channel.thumbnail_url} className="w-full object-contain" alt=""/>
+            <img src={channel.thumbnail_url} alt=""/>
             <p className="cardGameName ">{channel.gameName}</p> {/* <== name of the game he is playing*/}
             <div className="p-3">
 
-              
               <p>{channel.viewers_count}</p> {/* <== nummber of viewers actually watching*/}
 
               {/* button to watch streamer*/}
-                <div className="cardStreamBtn flex items-center justify-center whitespace-nowrapw-full">
+                <div className="cardStreamBtn ">
                   <img className="w-6 mr-3" src={playBtn} alt="play video"/> {/* <== button image PLAY*/}
-                  <span className="overflow-ellipsis overflow-hidden">{channel.user_name}</span> {/* <== streamer pseudo*/}
+                  <span className="">{channel.user_name}</span> {/* <== streamer pseudo*/}
                 </div>
             </div>
 

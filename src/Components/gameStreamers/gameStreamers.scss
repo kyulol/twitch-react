@@ -1,0 +1,20 @@
+.containerGameStreamers{
+  @apply flex flex-wrap justify-center items-center;
+
+}
+.cardStreamer{
+  @apply w-72 overflow-hidden rounded-lg m-6 shadow bg-twitch 
+  transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-none hover:ring ring-twitch ring-offset-4;
+  
+  .imgCardStreamer{
+    @apply w-full object-contain;
+  }
+}
+
+.btnCardStreamer{
+  @apply flex items-center justify-center whitespace-nowrap w-full py-2;
+
+  span{
+    @apply overflow-ellipsis overflow-hidden;
+  }
+}

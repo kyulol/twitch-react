@@ -85,24 +85,24 @@ export default function GameStreamers() {
   console.log(streamData);
 
   return (
-    <div>
-      <h1>Stream : {slug}</h1>
-      <h3>{numFormatter(viewersTotal)}</h3>
+    <div className="gameStreamers">
+      <h1 className="titleGameStreamers">Stream : {slug}</h1>
+      <h3 className="viewersGameStreamers">{numFormatter(viewersTotal)}</h3>
 
-      <div className="flex flex-wrap justify-between items-center">
+      <div className="containerGameStreamers">
       {streamData.map((streamer, index) =>(
         <Link key={index} to={{ pathname: `/live/${streamer.login}` }}>
-          <div className="cardStream w-72 overflow-hidden rounded-lg m-6 shadow bg-twitch transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-none hover:ring ring-twitch ring-offset-4">
+          <div className="cardStreamer">
             {/* image top streamer (image taken from his live) */}
-            <img src={streamer.thumbnail_url} className="w-full object-contain" alt=""/>
+            <img src={streamer.thumbnail_url} className="imgCardStreamer" alt=""/>
             <div className="p-3">
 
               <p>{streamer.viewers_count}</p> {/* <== nummber of viewers actually watching*/}
 
               {/* button to watch streamer*/}
-                <div className="cardStreamBtn flex items-center justify-center whitespace-nowrapw-full py-2">
+                <div className="btnCardStreamer">
                   <img className="w-6 mr-3" src={playBtn} alt="play video"/> {/* <== button image PLAY*/}
-                  <span className="overflow-ellipsis overflow-hidden">{streamer.user_name}</span> {/* <== streamer pseudo*/}
+                  <span>{streamer.user_name}</span> {/* <== streamer pseudo*/}
                 </div>
             </div>
 

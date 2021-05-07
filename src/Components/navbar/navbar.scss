@@ -1,5 +1,5 @@
 .navbar{
-  @apply bg-twitch h-16 text-white font-bold flex items-center fixed w-full z-50;
+  @apply bg-twitch lg:h-16 text-white font-bold lg:flex items-center fixed w-full z-50 hidden;
 }
 .nav-ul{
   @apply h-full flex items-center justify-center space-x-4 px-6;
@@ -33,4 +33,23 @@
       @apply w-8 ;
     }
   }
+}
+
+//  =====MOBILE==========MOBILE=====MOBILE=====MOBILE=====MOBILE=====MOBILE  //
+.navbarMbl{
+ @apply bg-twitch w-full flex justify-between items-center top-8 right-8 h-12 px-3 lg:hidden;
+}
+
+.menuMbl{
+  @apply bg-twitch text-white w-full absolute z-30 top-0 right-0 left-0 h-screen lg:hidden;
+}
+.menuMblOpen{
+  @apply max-h-screen;
+  transition: max-height 0.25s ease-in;
+}
+.menuMblClose{
+  max-height: 0;
+  transition: max-height 0.25s ease-in;
+  overflow: hidden;
+  background: #d5d5d5;
 }
