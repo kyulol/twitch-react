@@ -2,18 +2,9 @@ import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import api from '../../api';
 import view from '../../assets/images/icons/view.svg';
+import NumFormatter from '../../js/NumFormatter';
 
 export default function Sidebar() {
-
-  function numFormatter(num) {
-    if(num > 999 && num < 1000000){
-        return (num/1000).toFixed(0) + 'K'; // convert to K for number from > 1000 < 1 million 
-    }else if(num > 1000000){
-        return (num/1000000).toFixed(0) + 'M'; // convert to M for number from > 1 million 
-    }else if(num < 900){
-        return num; // if value < 1000, nothing to do
-    }
-}
 
   const [topStreamers, setTopStreamers] = useState([]);
 
@@ -108,7 +99,7 @@ export default function Sidebar() {
                     <span className="overflow-ellipsis overflow-hidden">{stream.user_name}</span>
                     <span className="flex justify-end font-light text-xs">
                         <img src={view} className="w-4 mr-2 animate-pulse" alt=""/>
-                        {numFormatter(stream.viewer_count)}
+                        {NumFormatter(stream.viewer_count)}
                     </span>  
                   </div>
                   

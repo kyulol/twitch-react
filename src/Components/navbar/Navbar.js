@@ -61,7 +61,7 @@ export default function Navbar() {
         <div className={`div-search ${outLineInput ? 'ring-2 ring-black rounded-md' : null}`}>
           <form className="form-search" onSubmit={handleSubmit}>
             <input required value={searchInput} onChange={(e) => handleKeyPress(e)} onClick={changeState} type="text" className="input-search"/>
-            <Link to={{pathname: `search-results/${searchInput}`}}>
+            <Link className="flex items-center" to={{pathname: `search-results/${searchInput}`}}>
               <button type="submit" className="btn-submit ">
                 <img className="search-icon" src={search} alt="search Icon" srcSet=""/>
               </button>

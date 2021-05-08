@@ -30,7 +30,7 @@
     }
     // search <img>
     .btn-submit .search-icon{
-      @apply w-8 ;
+      @apply w-8 flex items-center;
     }
   }
 }

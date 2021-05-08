@@ -2,20 +2,12 @@ import React, {useState, useEffect} from 'react';
 import {useLocation, useParams, Link} from 'react-router-dom';
 import api from '../../api';
 import playBtn from '../../assets/images/icons/playTwitch.svg';
+import NumFormatter from '../../js/NumFormatter';
+import view from '../../assets/images/icons/view.svg';
 
 
 
 export default function GameStreamers() {
-
-  function numFormatter(num) {
-    if(num > 999 && num < 1000000){
-        return (num/1000).toFixed(0) + 'K'; // convert to K for number from > 1000 < 1 million 
-    }else if(num > 1000000){
-        return (num/1000000).toFixed(0) + 'M'; // convert to M for number from > 1 million 
-    }else if(num < 900){
-        return num; // if value < 1000, nothing to do
-    }
-}
 
   let {slug} = useParams();
   let location = useLocation();
@@ -86,8 +78,11 @@ export default function GameStreamers() {
 
   return (
     <div className="gameStreamers">
-      <h1 className="titleGameStreamers">Stream : {slug}</h1>
-      <h3 className="viewersGameStreamers">{numFormatter(viewersTotal)}</h3>
+      <h1 className="titleGameStreamers text-5xl font-medium my-8">Stream : {slug}</h1>
+      <div className="border-twitch border-2 w-44 mx-auto rounded-lg h-10 flex items-center justify-center text-twitch font-bold animate-pulse">
+        <img className="w-5" src={view} alt="icon view (eye)" />
+        <h3 className="viewersGameStreamers ml-3 ">{NumFormatter(viewersTotal)} Viewers</h3>
+      </div>
 
       <div className="containerGameStreamers">
       {streamData.map((streamer, index) =>(
