@@ -94,8 +94,8 @@ export default function Sidebar() {
       <ul className="mx-auto divide-y-2 divide-twitch divide-solid">
         
         {topStreamers.map((stream, index) =>(
-          <Link key={index} to={{pathname: `/live/${stream.login}`}}>
-            <li className="py-2 text-sm text-left">
+          <li  key={index} className="py-2 text-sm text-left">
+            <Link to={{pathname: `/live/${stream.login}`}}>
 
               <div className="flex items-center w-full">
 
@@ -117,8 +117,8 @@ export default function Sidebar() {
 
               </div>
                 
-            </li>
-          </Link>
+            </Link>
+          </li>
         ))}
 
       </ul>
