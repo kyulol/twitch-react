@@ -8,7 +8,7 @@ import playBtn from '../../assets/images/icons/playTwitch.svg';
 export default function TopStreams() {
 
   const [channels, setChannels] = useState([]);
-
+  
   useEffect(() =>{
 
     const fetchData = async () => {
@@ -85,9 +85,8 @@ export default function TopStreams() {
     }
 
     fetchData();
-    console.log(channels);
 
-  }, [])
+  }, []);
 
   return (
     <div className="topStreamers">
