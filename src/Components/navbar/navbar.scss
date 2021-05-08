@@ -22,11 +22,11 @@
 
   // search <form>
   .form-search{
-    @apply text-almostBlack flex items-center;
+    @apply text-almostBlack flex items-center h-full;
 
     // search <input>
     .input-search{
-      @apply outline-none pl-2;
+      @apply outline-none pl-2 w-72;
     }
     // search <img>
     .btn-submit .search-icon{
