@@ -38,19 +38,21 @@ export default function Navbar() {
 
         <ul className="nav-ul">
 
+          {/* Logo twitch clickable to return home */}
           <li className="nav-li">
             <Link to="/">
               <img className="logo-twitch w-8" src={twitchLogoWhite} alt="twitch Logo"/>
             </Link>
-            
           </li>
 
+          {/* go to Top games */}
           <li className="nav-li">
             <NavLink exact activeClassName="active" to="/">
               Top Jeux
             </NavLink>
           </li>
 
+          {/* go to top streamers */}
           <li className="nav-li">
             <NavLink exact activeClassName="active" to="/top-streams">
               Top Streamers
@@ -58,7 +60,7 @@ export default function Navbar() {
           </li>
         </ul>
 
-        <div className={`div-search ${outLineInput ? 'ring-2 ring-black rounded-md' : null}`}>
+        <div className={`div-search ${outLineInput ? 'test' : null}`}>
           <form className="form-search" onSubmit={handleSubmit}>
             <input required value={searchInput} onChange={(e) => handleKeyPress(e)} onClick={changeState} type="text" className="input-search"/>
             <Link className="flex items-center" to={{pathname: `search-results/${searchInput}`}}>
@@ -87,9 +89,6 @@ export default function Navbar() {
         helo
 
       </div>
-
-      
-
     </>
   )
 }

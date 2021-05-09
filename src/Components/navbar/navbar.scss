@@ -1,17 +1,18 @@
 .navbar{
   @apply bg-twitch lg:h-16 text-white font-bold lg:flex items-center fixed w-full z-50 hidden;
-}
-.nav-ul{
-  @apply h-full flex items-center justify-center space-x-4 px-6;
 
-}
-
-.nav-li a{
-    @apply border-b-2 border-dotted border-opacity-0 border-white;
-    &.active{
-      @apply border-opacity-100;
+  .nav-ul{
+    @apply h-full flex items-center justify-center space-x-4 px-6;
+  
+    .nav-li a{
+        @apply border-b-2 border-dotted border-opacity-0 border-white;
+        &.active{
+          @apply border-opacity-100;
+        }
     }
+  }
 }
+
 
 // search-base
 .div-search{
@@ -19,6 +20,9 @@
   position: absolute;
   top: 50%; right: 50%;
   transform: translate(50%,-50%);
+  &.test{
+    @apply ring-2 ring-white ring-offset-2 ring-offset-twitch rounded-md;
+  }
 
   // search <form>
   .form-search{
@@ -30,7 +34,7 @@
     }
     // search <img>
     .btn-submit .search-icon{
-      @apply w-8 flex items-center;
+      @apply w-6 mr-2;
     }
   }
 }
