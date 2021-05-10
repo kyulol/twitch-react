@@ -48,12 +48,65 @@
   @apply bg-twitch text-white w-full absolute z-30 top-0 right-0 left-0 h-screen lg:hidden;
 }
 .menuMblOpen{
-  @apply max-h-screen;
-  transition: max-height 0.25s ease-in;
+  @apply max-h-36 delay-200;
+  transition: max-height 0.4s ease-in;
 }
 .menuMblClose{
   max-height: 0;
-  transition: max-height 0.25s ease-in;
+  transition: max-height 0.4s ease-in;
   overflow: hidden;
-  background: #d5d5d5;
+  // background: #d5d5d5;
+}
+
+hr.styleWhite {
+  @apply border-none h-0.5 my-3 bg-gradient-to-r from-transparent via-gray-50 to-transparent;
+  
+}
+
+
+
+.boxMenu{
+  @apply p-0.5 h-8 w-8 border-none cursor-pointer rounded-md relative focus:outline-none;
+}
+.boxMenu.iconClose .lines:nth-child(1){
+@apply top-2 transform rotate-45;
+transition: 
+top 0.4s ease-in-out,
+transform 0.4s 0.4s ease-in-out;
+}
+.boxMenu.iconClose .lines:nth-child(2){
+  @apply bg-opacity-0;
+}
+.boxMenu.iconClose .lines:nth-child(3){
+  @apply top-2 transform -rotate-45;
+  transition: 
+  top 0.4s ease-in-out,
+  transform 0.4s 0.4s ease-in-out;
+}
+
+
+.containerLines{
+  @apply absolute pointer-events-none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  .lines{
+    @apply absolute rounded-full w-full h-1 bg-white;
+    &:nth-child(1){
+      @apply top-0 transform rotate-0;
+      transition: 
+      transform 0.4s ease-in-out,
+      top 0.4s 0.4s ease-in-out;
+    }
+    &:nth-child(2){
+      @apply top-2;
+    }
+    &:nth-child(3){
+      @apply top-4 transform rotate-0;
+      transition: 
+      transform 0.4s ease-in-out,
+      top 0.4s 0.4s ease-in-out;
+    }
+  }
+
 }
