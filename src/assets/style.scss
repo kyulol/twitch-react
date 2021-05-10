@@ -25,3 +25,7 @@ a {
   @apply font-nunito  text-center; 
   height: auto;
 }
+
+.titlesPages{
+  @apply text-3xl md:text-5xl font-bold my-8;
+}

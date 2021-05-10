@@ -1,8 +1,5 @@
 .topStreamers{
 
-  .titleTopStreamers{
-    @apply text-3xl md:text-5xl font-bold my-8;
-  }
   .containerTopStreamers{
     @apply flex flex-wrap justify-center items-center font-medium text-white;
   }
@@ -10,7 +7,7 @@
 
 // card top streamer
 .cardTopStreamer{
-  @apply relative w-72 overflow-hidden rounded-lg m-4 shadow bg-twitch transform duration-300 ease-in-out 
+  @apply relative w-40 sm:w-72 text-xs md:text-base overflow-hidden rounded-lg  m-2 md:m-4 shadow bg-twitch transform duration-300 ease-in-out 
   hover:-translate-y-2 hover:shadow-none hover:ring ring-twitch ring-offset-4;
 
   // hide game name and image if no hover

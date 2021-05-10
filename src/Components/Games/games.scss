@@ -1,16 +1,12 @@
 .gamesList {
-  // page title
-  h1.titleGamesList {
-    @apply text-3xl md:text-5xl font-bold my-8;
-  }
-
   // container of listed games
   div.containerGamesList{
     @apply flex items-center justify-center flex-wrap;
   }
 }
+
 .cardGame{
-  @apply w-52 flex items-center justify-center flex-col m-4 shadow rounded-lg overflow-hidden cursor-pointer bg-twitch 
+  @apply w-32 sm:w-52 text-xs md:text-base flex items-center justify-center flex-col m-4 shadow rounded-lg overflow-hidden cursor-pointer bg-twitch 
   transform duration-300 ease-in-out 
   hover:-translate-y-2 hover:shadow-none hover:ring ring-twitch ring-offset-4;
 
