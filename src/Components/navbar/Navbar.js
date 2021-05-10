@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import twitchLogoWhite from '../../assets/images/logos/twitchWhite.svg';
 import search from '../../assets/images/icons/search.svg';
-import openMenuWhite from '../../assets/images/icons/menuMbl/openMenuWhite.svg';
-import closeMenuWhite from '../../assets/images/icons/menuMbl/closeMenuWhite.svg';
+// import openMenuWhite from '../../assets/images/icons/menuMbl/openMenuWhite.svg';
+// import closeMenuWhite from '../../assets/images/icons/menuMbl/closeMenuWhite.svg';
 
 
 
@@ -78,15 +78,39 @@ export default function Navbar() {
       
       <div className="navbarMbl hidden">
         <Link to="/">
-          <img className="logoTwitchMbl w-8" src={twitchLogoWhite} alt="twitch Logo"/>
+          <img className="logoTwitchMbl w-8 z-40 relative" src={twitchLogoWhite} alt="twitch Logo"/>
         </Link>
-        <button onClick={changeMenuState} className="focus:outline-none">
-          <img className="hamburgerIcon relative z-40 w-8 h-8" src={toggleMobileMenu ? closeMenuWhite : openMenuWhite} alt="icone ouvrir ou fermer menu responsive"/>
+
+        <button onClick={changeMenuState} className={`boxMenu z-40 ${toggleMobileMenu ? 'iconClose' : 'iconMenu'}`}>
+          <div className="containerLines pointer-events-none h-5 w-7">
+            <div className="lines"></div>
+            <div className="lines"></div>
+            <div className="lines"></div>
+          </div>
+
+          {/* <img className="hamburgerIcon relative z-40 w-8 h-8" src={toggleMobileMenu ? closeMenuWhite : openMenuWhite} alt="icone ouvrir ou fermer menu responsive"/> */}
         </button>
       </div>
 
       <div className={`menuMbl ${toggleMobileMenu ? 'menuMblOpen' : 'menuMblClose'}`}>
-        helo
+        <ul className="nav-ul mt-12">
+
+          {/* go to Top games */}
+          <li className="nav-li">
+            <NavLink exact activeClassName="active" to="/">
+              Top Jeux
+            </NavLink>
+          </li>
+
+          <hr className="styleWhite" />
+
+          {/* go to top streamers */}
+          <li className="nav-li">
+            <NavLink exact activeClassName="active" to="/top-streams">
+              Top Streamers
+            </NavLink>
+          </li>
+        </ul>
 
       </div>
     </>

@@ -33,7 +33,7 @@ export default function Games() {
 
   return (
     <div className="gamesList">
-      <h1 className="titleGamesList">Jeux les plus populaires</h1>
+      <h1 className="titleGamesList">Jeux les plus populaires :</h1>
 
       <div className="containerGamesList">
         {games.map((game, index) =>(
