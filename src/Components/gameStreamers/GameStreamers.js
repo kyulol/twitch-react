@@ -78,10 +78,10 @@ export default function GameStreamers() {
 
   return (
     <div className="gameStreamers">
-      <h1 className="titleGameStreamers text-5xl font-medium my-8">Stream : {slug}</h1>
-      <div className="border-twitch border-2 w-44 mx-auto rounded-lg h-10 flex items-center justify-center text-twitch font-bold animate-pulse">
+      <h1 className="titlesPages">Stream : <br />{slug}</h1>
+      <div className="viewersContainer">
         <img className="w-5" src={view} alt="icon view (eye)" />
-        <h3 className="viewersGameStreamers ml-3 ">{NumFormatter(viewersTotal)} Viewers</h3>
+        <h3 className="ml-3 ">{NumFormatter(viewersTotal)} Viewers</h3>
       </div>
 
       <div className="containerGameStreamers">
@@ -90,7 +90,7 @@ export default function GameStreamers() {
           <div className="cardStreamer">
             {/* image top streamer (image taken from his live) */}
             <img src={streamer.thumbnail_url} className="imgCardStreamer" alt=""/>
-            <div className="p-3">
+            <div className="py-2 sm:p-3">
 
               <p>{streamer.viewers_count}</p> {/* <== nummber of viewers actually watching*/}
 

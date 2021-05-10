@@ -90,7 +90,7 @@ export default function TopStreams() {
 
   return (
     <div className="topStreamers">
-      <h1 className="titleTopStreamers">Streams les plus populaires :</h1>
+      <h1 className="titlesPages">Streams les plus <br />populaires :</h1>
 
       {/* container cards top streamers */}
       <div className="containerTopStreamers">
@@ -107,7 +107,7 @@ export default function TopStreams() {
               <img src={channel.gameImage} className="w-10 h-10 object-cover rounded-full mr-2" alt="" /> {/* image game playing */}
               <p className="gameNameCardTopStreamer">{channel.gameName}</p> {/* <== name of the game he is playing*/}
             </div>
-            <div className="p-3">
+            <div className="py-2 sm:p-3">
 
               <p>{channel.viewers_count}</p> {/* <== nummber of viewers actually watching*/}
 
